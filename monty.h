@@ -18,7 +18,7 @@ extern bool queue_mode;
 int main(int argc, char *argv[]);
 void push(MontyStack_t **stack, unsigned int line_number, const int n);
 void pop(MontyStack_t **stack);
-void pint(MontyStack_t *stack, unsigned int line_number);
+void pint(MontyStack_t **stack, unsigned int line_number);
 void pall(MontyStack_t **stack, unsigned int line_number);
 void swap(MontyStack_t **stack, unsigned int line_number);
 void add(MontyStack_t **stack, unsigned int line_number);
