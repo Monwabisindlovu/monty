@@ -10,20 +10,20 @@
  */
 void push(MontyStack_t **stack, unsigned int line_number, const int n)
 {
-    MontyStack_t *new;
+MontyStack_t *new;
 
-    new = malloc(sizeof(MontyStack_t));
-    if (new == NULL)
-    {
-        fprintf(stderr, "Error: malloc failed\n");
-        exit(EXIT_FAILURE);
-    }
-    new->n = n;
-    new->next = *stack;
-    *stack = new;
+new = malloc(sizeof(MontyStack_t));
+if (new == NULL)
+{
+fprintf(stderr, "Error: malloc failed\n");
+exit(EXIT_FAILURE);
+}
+new->n = n;
+new->next = *stack;
+*stack = new;
 
-    /* To avoid unused parameter warning */
-    (void)line_number;
+
+(void)line_number;
 }
 
 /**
@@ -35,16 +35,16 @@ void push(MontyStack_t **stack, unsigned int line_number, const int n)
  */
 void pall(MontyStack_t **stack, unsigned int line_number)
 {
-    MontyStack_t *current;
+MontyStack_t *current;
 
-    current = *stack;
-    while (current != NULL)
-    {
-        printf("%d\n", current->n);
-        current = current->next;
-    }
+current = *stack;
+while (current != NULL)
+{
+printf("%d\n", current->n);
+current = current->next;
+}
 
-    /* To avoid unused parameter warning */
-    (void)line_number;
+
+(void)line_number;
 }
 
