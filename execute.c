@@ -42,6 +42,7 @@ instruction_t opcodes[] = {
 {"mul", f_mul},
 {"mod", f_mod},
 {"pchar", f_pchar},
+{"pstr", f_pstr},
 
 {NULL, NULL}
 };
