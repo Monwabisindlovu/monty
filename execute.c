@@ -33,28 +33,15 @@ instruction_t opcodes[] = {
 {"push", f_push},
 {"pall", f_pall},
 {"pint", f_pint},
+{"pop", pop}, 
 {NULL, NULL}
 };
+
 opcode = strtok(content, " \t\n");
 arg = strtok(NULL, " \t\n");
-if (opcode == NULL)
-{
-fprintf(stderr, "L%d: missing opcode\n", counter);
-free_stack(*stack);
-fclose(file);
-exit(EXIT_FAILURE);
-}
+
 bus.arg = arg;
-if (strcmp(opcode, "push") == 0)
-{
-if (arg == NULL || !is_number(arg))
-{
-fprintf(stderr, "L%d: usage: push integer\n", counter);
-free_stack(*stack);
-fclose(file);
-exit(EXIT_FAILURE);
-}
-}
+
 for (i = 0; opcodes[i].opcode; i++)
 {
 if (strcmp(opcode, opcodes[i].opcode) == 0)
@@ -63,9 +50,9 @@ opcodes[i].f(stack, counter);
 return;
 }
 }
+
 fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
 free_stack(*stack);
 fclose(file);
 exit(EXIT_FAILURE);
 }
-
