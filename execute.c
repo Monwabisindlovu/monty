@@ -44,7 +44,14 @@ instruction_t opcodes[] = {
 
 {NULL, NULL}
 };
-
+while (*content == ' ')
+{
+content++;
+}
+if (*content == '#')
+{
+return;
+}
 opcode = strtok(content, " \t\n");
 arg = strtok(NULL, " \t\n");
 
