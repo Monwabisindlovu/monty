@@ -37,6 +37,7 @@ instruction_t opcodes[] = {
 {"swap", swap},
 {"add", add},
 {"nop", f_nop},
+{"sub", f_sub},
 {NULL, NULL}
 };
 
